@@ -104,6 +104,14 @@
                   }
               }
 
+              if (positions.length === 0) {
+                  incorrectGuesses++;
+                  if(incorrectGuesses === 5){
+                      $("#youLose").modal("show");
+                  }
+              }
+
+
               replaceBlanks(positions);
               console.log("replaceBlanks");
           } else {
@@ -124,7 +132,6 @@
               else {
                   console.log(i);
                   displayNew = displayNew.concat("_ ");
-                  incorrectGuesses++;
               }
           }
 
@@ -134,7 +141,7 @@
 
 
       function updateIncorrectAnswers(){
-          let newVal = (incorrectGuesses/5 * (100/6))
+          let newVal = (incorrectGuesses * (100/5))
           console.log("Val: " + newVal);
           document.getElementById("errorProgressBar").value = newVal;
       }
