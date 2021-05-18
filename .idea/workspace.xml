@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a23a5b14-3985-48c0-8d9a-db4a3672b7fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/words.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/hangman.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/hangman.html" afterDir="false" />
     </list>
@@ -60,13 +61,6 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -97,7 +91,9 @@
       <workItem from="1620681896525" duration="3372000" />
       <workItem from="1620793446286" duration="67000" />
       <workItem from="1621287214693" duration="669000" />
-      <workItem from="1621291754170" duration="21053000" />
+      <workItem from="1621291754170" duration="21441000" />
+      <workItem from="1621316560490" duration="8456000" />
+      <workItem from="1621362367621" duration="2687000" />
     </task>
     <servers />
   </component>
