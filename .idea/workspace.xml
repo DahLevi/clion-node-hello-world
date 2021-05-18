@@ -7,8 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a23a5b14-3985-48c0-8d9a-db4a3672b7fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/hangman.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/javascripts/hangman.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/clion-node-hello-world.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clion-node-hello-world.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/numbers.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/numbers.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,12 +24,24 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/bin/www" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/numbers.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Procfile" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/mypage.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/table-Inclass.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/index.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/simple-page.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/resume.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1qlU2x6CFGPtPdATu5EqAC4C70I" />
   <component name="ProjectViewState">
@@ -43,7 +58,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.16.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.41" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../node-express-01" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
@@ -78,7 +93,14 @@
       <workItem from="1619656226354" duration="496000" />
       <workItem from="1619667425336" duration="342000" />
       <workItem from="1619667778725" duration="8451000" />
-      <workItem from="1619711152286" duration="16553000" />
+      <workItem from="1619711152286" duration="17237000" />
+      <workItem from="1620085334224" duration="631000" />
+      <workItem from="1620253177465" duration="1728000" />
+      <workItem from="1620440961797" duration="89000" />
+      <workItem from="1620681896525" duration="3372000" />
+      <workItem from="1620793446286" duration="67000" />
+      <workItem from="1621287214693" duration="669000" />
+      <workItem from="1621291754170" duration="20604000" />
     </task>
     <servers />
   </component>

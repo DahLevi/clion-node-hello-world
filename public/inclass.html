@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      function display(){
+        var selector = document.getElementById("output");
+        var text = document.getElementById("box").value;
+        document.getElementById("output").style.color = document.getElementById("color").value;
+        if(document.getElementById("italics").checked) {
+          document.getElementById("output").style.fontStyle = "italic";
+        } else {
+          document.getElementById("output").style.fontStyle = "normal";
+        }
+        console.log(document.getElementById("output").value);
+        if(document.getElementById("output")[1]) {
+          text = text.replace(/[^aeiou]/ig, "")
+        } else {
+          text = text.replace(/[aeiou]/ig, "")
+        }
+        selector.textContent = text;
+      }
+
+      function clear(){
+        document.getElementById("box").value = null;
+        document.getElementById("output").innerHTML = "";
+      }
+    </script>
+
+  <label for="box">Text</label> <br>
+  <input id="box" name="text">
+  <div>
+    Color
+    <input id="color" type="color">
+  </div>
+  <div>
+    Italics
+    <input id="italics" type="checkbox">
+  </div>
+  <div>
+    Vowels
+    <input type="radio" name="options">
+    <br>
+    Consonants
+    <input type="radio" checked name="options">
+  </div>
+  <div>
+    <button onclick="display()">Do</button>
+    <button onclick="clear()">Clear</button>
+  </div>
+  <div id="output">
+
+  </div>
+
+
+</body>
+</html>
