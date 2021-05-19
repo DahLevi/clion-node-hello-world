@@ -10,6 +10,8 @@
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="javascripts/hangman.js"></script>
+
+
 </head>
 <body style="margin: 50px; align-items: center; align-content: center; justify-content: center; text-align: center">
 <div aria-hidden="false" aria-labelledby="youLoseLabel" class="modal" id="youLose" role="dialog"
@@ -18,7 +20,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="youLoseLabel">YOU LOSE</h5>
-                <button onclick="closeModal('youLose')" aria-label="Close" class="close" data-dismiss="modal"
+                <button aria-label="Close" class="close" data-dismiss="modal" onclick="closeModal('youLose')"
                         type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -27,11 +29,12 @@
                 Thanks for playing, but you have lost. Want to play again?
             </div>
             <div class="modal-footer">
-                <button onclick="closeModal('youLose')" class="btn btn-secondary" data-dismiss="modal"
+                <button class="btn btn-secondary" data-dismiss="modal" onclick="closeModal('youLose')"
                         type="button">Nope!
                 </button>
-                <button onclick="startGame()" class="btn btn-primary" data-dismiss="modal" type="button">Let's Play
-                    Again</button>
+                <button class="btn btn-primary" data-dismiss="modal" onclick="startGame()" type="button">Let's Play
+                    Again
+                </button>
 
             </div>
         </div>
@@ -44,7 +47,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="chooseCategoryLabel">Please Choose a Category</h5>
-                <button onclick="closeModal('chooseCategory')" aria-label="Close" class="close" data-dismiss="modal"
+                <button aria-label="Close" class="close" data-dismiss="modal" onclick="closeModal('chooseCategory')"
                         type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -53,9 +56,10 @@
                 Please choose a category before guessing a letter! We need to generate a word for you to guess!
             </div>
             <div class="modal-footer">
-                <button onclick="closeModal('chooseCategory')" class="btn btn-secondary" data-dismiss="modal"
+                <button class="btn btn-secondary" data-dismiss="modal" onclick="closeModal('chooseCategory')"
                         type="button">Ok!
-                    I am Sorry</button>
+                    I am Sorry
+                </button>
             </div>
         </div>
     </div>
@@ -67,7 +71,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="alreadyGuessedLabel">YOU LOSE</h5>
-                <button onclick="closeModal('alreadyGuessed')" aria-label="Close" class="close" data-dismiss="modal"
+                <button aria-label="Close" class="close" data-dismiss="modal" onclick="closeModal('alreadyGuessed')"
                         type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -76,9 +80,10 @@
                 You have already guessed that letter. Please guess a different letter and try again.
             </div>
             <div class="modal-footer">
-                <button onclick="closeModal('alreadyGuessed')" class="btn btn-secondary" data-dismiss="modal"
-                        type="button">Resign</button>
-                <button onclick="startGame()" class="btn btn-primary" data-dismiss="modal"
+                <button class="btn btn-secondary" data-dismiss="modal" onclick="closeModal('alreadyGuessed')"
+                        type="button">Resign
+                </button>
+                <button class="btn btn-primary" data-dismiss="modal" onclick="startGame()"
                         type="button">Ok! I will try again
                 </button>
             </div>
@@ -92,8 +97,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="playerWonLabel">YOU WIN</h5>
-                <button onclick="closeModal('playerWon')" aria-label="Close" class="close" data-dismiss="modal"
-                type="button">
+                <button aria-label="Close" class="close" data-dismiss="modal" onclick="closeModal('playerWon')"
+                        type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -101,9 +106,10 @@
                 You correctly guessed the word! Congratulations!
             </div>
             <div class="modal-footer">
-                <button onclick="closeModal('playerWon')" class="btn btn-secondary" data-dismiss="modal"
-                        type="button">Quit while I am ahead</button>
-                <button onclick="startGame()" class="btn btn-primary" data-dismiss="modal"
+                <button class="btn btn-secondary" data-dismiss="modal" onclick="closeModal('playerWon')"
+                        type="button">Quit while I am ahead
+                </button>
+                <button class="btn btn-primary" data-dismiss="modal" onclick="startGame()"
                         type="button">Play Again
                 </button>
             </div>
@@ -119,9 +125,10 @@
         closer to
         hanging. I know what you are thinking - Yes, we are pretty metal.</p>
     <p>To begin, set the number of characters in the word you wish to guess. Then select a category. Then enter your
-    guess into the guess box!</p>
-    <p>Words and letters are accepted. However, the entire word is considered, if your word guess is wrong, it only
-        counts as 1 limb. You have 5 "misguesses" before you lose. You will lose on your 5th wrong guess.</p>
+        guess into the guess box!</p>
+    <p>Words and letters are accepted. However, the entire word is considered, if your word guess is wrong, YOU LOSE!
+        High stakes, high rewards. You have 5 letter "misguesses" before you lose. You will lose on your 5th wrong guess
+        .</p>
     <p>And just to make all this scarring "killing a man over a word game" stuff easier, I have made it so you can
         hit either the "Guess!" button or your enter key to submit your guess. I know, I am a generous guy. You're
         welcome.</p>
@@ -131,59 +138,63 @@
 <div style="width: 100%">Maximum number of letters in word</div>
 <div class="slidecontainer" style="display: flex; justify-content: center;">
 
-    <div style="width: 50%;">
-        <input class="form-range" id="wordLength" max="10" min="5" onclick="slider()" step="1" style="padding-left:
-         50%"
-               type="range">
+    <div>
+        <input class="form-range" id="wordLength" max="12" min="3" onclick="slider()" step="1" type="range">
         <svg height="14" width="100%" xmlns="http://www.w3.org/2000/svg">
-            <text class="range__point" text-anchor="start" x="50%" y="14">5</text>
-            <text class="range__point" text-anchor="middle" x="60%" y="14">6</text>
-            <text class="range__point" text-anchor="middle" x="70%" y="14">7</text>
-            <text class="range__point" text-anchor="middle" x="80%" y="14">8</text>
-            <text class="range__point" text-anchor="middle" x="90%" y="14">9</text>
-            <text class="range__point" text-anchor="end" x="100%" y="14">10</text>
+            <text class="range__point" text-anchor="start" x="0%" y="14">3</text>
+            <text class="range__point" text-anchor="middle" x="12%" y="14">4</text>
+            <text class="range__point" text-anchor="middle" x="23%" y="14">5</text>
+            <text class="range__point" text-anchor="middle" x="34%" y="14">6</text>
+            <text class="range__point" text-anchor="middle" x="44%" y="14">7</text>
+            <text class="range__point" text-anchor="middle" x="55%" y="14">8</text>
+            <text class="range__point" text-anchor="middle" x="66%" y="14">9</text>
+            <text class="range__point" text-anchor="middle" x="77%" y="14">10</text>
+            <text class="range__point" text-anchor="middle" x="88%" y="14">11</text>
+            <text class="range__point" text-anchor="start" x="96%" y="14">12</text>
         </svg>
     </div>
 
-    <div id="rangeDisplay" style="width: 30%; float: left;"></div>
+    <div id="rangeDisplay"></div>
 </div>
 
 <br>
 <h5>Categories:</h5>
-<button class="btn btn-primary" id="catFood" onclick="selectOption('food')" type="button">Food</button>
-<button class="btn btn-primary" id="catAnimals" onclick="selectOption('animals')" type="button">Animals</button>
+<button class="btn btn-primary" id="catFood" onclick="selectOption('food', this)" type="button">Food</button>
+<button class="btn btn-primary" id="catAnimals" onclick="selectOption('animals', this)" type="button">Animals</button>
 
 <div style="padding-bottom: 50px"></div>
 
+<div id="guessingDiv">
+    <div class="form-floating mb-3">
 
-<div class="form-floating mb-3">
+        <input class="form-control" id="playersGuess" placeholder="p" type="text"/>
+        <label class="form-label" for="playersGuess">Guess a letter/word</label>
+    </div>
 
-    <input class="form-control" id="playersGuess" type="text" placeholder="p"/>
-    <label class="form-label" for="playersGuess">Guess a letter/word</label>
-</div>
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary"
+                onclick="guessALetter(document.getElementById('playersGuess').value.toLowerCase())"
+                type="button">Guess!
+        </button>
+    </div>
 
-<div class="input-group-append">
-    <button class="btn btn-outline-secondary"
-            onclick="guessALetter(document.getElementById('playersGuess').value.toLowerCase())"
-            type="button">Guess!
-    </button>
-</div>
+    <br>
 
-<br>
+    <div class="alert alert-primary" id="" role="alert">
+        Word: <p id="currentWordShown">Please select a category!</p>
+    </div>
+    <div>
 
-<div class="alert alert-primary" id="" role="alert">
-    Word: <p id="currentWordShown">Please select a category!</p>
-</div>
-<div>
-
-</div>
-<div class="alert alert-primary" id="guessedLetters">
-    Guessed Letters
-    <hr>
-    <p id="guessedLettersDisplay"></p>
-    <hr>
-    Incorrect Guesses <br>
-    <progress id="errorProgressBar" max="100" value="0">Error</progress>
+    </div>
+    <div class="alert alert-primary" id="guessedLetters">
+        Guessed Letters
+        <hr>
+        <p id="guessedLettersDisplay"></p>
+        <hr>
+        Incorrect Guesses (<span id="incorrectAnswersDisplay">0</span>/5)<br>
+        <progress id="errorProgressBar" max="100" style="width: 75%" value="0">Error</progress>
+        Loser
+    </div>
 </div>
 
 
@@ -191,18 +202,18 @@
     var words = {
         "categories":
             {
-                "food":["apple", "banana", "coconut","bilberry", "pineapple", "grapefruit"],
-                "animals":["zebra", "bobcat", "giraffe", "platypus", "alligator", "bloodhound"]
+                "food": ["cod", "pear", "apple", "banana", "coconut", "bilberry", "pineapple", "grapefruit",
+                    "marshmallow", "pumpernickel"],
+                "animals": ["dog", "bear", "zebra", "bobcat", "giraffe", "platypus", "alligator", "bloodhound",
+                    "labradoodle", "hippopotamus"]
             }
     }
 
     document.getElementById('playersGuess').addEventListener('keyup', function (event) {
-            if (event.code === 'Enter') {
-                guessALetter(document.getElementById('playersGuess').value.toLowerCase());
-            }
-        });
-
-
+        if (event.code === 'Enter') {
+            guessALetter(document.getElementById('playersGuess').value.toLowerCase());
+        }
+    });
 
 
     let category = "";
@@ -210,6 +221,7 @@
     var wordToGuess = "";
     let guessedLetters = [];
     let incorrectGuesses = 0;
+    document.getElementById("guessingDiv").style.display = "none";
 
     function slider() {
         count = document.getElementById("wordLength").value;
@@ -220,10 +232,7 @@
         document.getElementById("catFood").disabled = false;
         document.getElementById("catAnimals").disabled = false;
         document.getElementById('playersGuess').value = "";
-        $("#playerWon").modal("hide");
-        $("#youLose").modal("hide");
-        $("#alreadyGuessed").modal("hide");
-        $("#chooseCategory").modal("hide");
+
         replaceBlanks();
         document.getElementById("currentWordShown").innerHTML = "Please select a category!"
         document.getElementById("guessedLettersDisplay").innerHTML = "Please select a category!"
@@ -232,72 +241,76 @@
         wordToGuess = "";
         guessedLetters = [];
         incorrectGuesses = 0;
+        document.getElementById("guessingDiv").style.display = "none";
+        updateIncorrectAnswers();
+        $("#playerWon").modal("hide");
+        $("#youLose").modal("hide");
+        $("#alreadyGuessed").modal("hide");
+        $("#chooseCategory").modal("hide");
     }
 
-    function selectOption(option) {
+    function selectOption(option, id) {
         category = option;
         document.getElementById("catFood").disabled = true;
         document.getElementById("catAnimals").disabled = true;
-        document.getElementById("currentWordShown").innerHTML = ""
-        document.getElementById("guessedLettersDisplay").innerHTML = ""
+        id.disabled = false;
+        //document.getElementById("currentWordShown").innerHTML = ""
+        //document.getElementById("guessedLettersDisplay").innerHTML = ""
+        document.getElementById("guessingDiv").style.display = "block";
         selectWord();
     }
 
     function guessALetter(currGuess) {
-        if(wordToGuess === "") {
+        if (wordToGuess === "") {
             $("#chooseCategory").modal("show");
             return;
         }
 
-        if(/^[a-zA-Z]+$/.test(currGuess))
-        if (!alreadyGuessed(currGuess)) {
-            if (incorrectGuesses < 5) {
-                if (guessedLetters.length === 0)
-                    document.getElementById("guessedLettersDisplay").innerHTML = currGuess;
-                else {
-                    document.getElementById("guessedLettersDisplay").innerHTML =
-                        document.getElementById("guessedLettersDisplay").innerHTML + ","
-                        + currGuess;
-                }
-                if(currGuess.length === 1) {
-                    guessedLetters.push(currGuess);
-                    let pushed = 0;
-                    for (let i = 0; i < wordToGuess.length; i++) {
-                        if (wordToGuess[i] === currGuess) {
-                            guessedLetters.push(i);
-                            pushed++;
-                        }
+        if (/^[a-zA-Z]+$/.test(currGuess))
+            if (!alreadyGuessed(currGuess)) {
+                if (incorrectGuesses < 5) {
+                    if (guessedLetters.length === 0)
+                        document.getElementById("guessedLettersDisplay").innerHTML = currGuess;
+                    else {
+                        document.getElementById("guessedLettersDisplay").innerHTML =
+                            document.getElementById("guessedLettersDisplay").innerHTML + ","
+                            + currGuess;
                     }
-
-                    if (pushed === 0) {
-                        incorrectGuesses++;
-                        if (incorrectGuesses === 5) {
-                            $("#youLose").modal("show");
-                        }
-                    }
-                } else {
-                    if(currGuess === wordToGuess){
-                        $("#playerWon").modal("show");
-                    } else {
-                        incorrectGuesses++;
+                    if (currGuess.length === 1) {
                         guessedLetters.push(currGuess);
-                        if (incorrectGuesses === 5) {
+                        let pushed = 0;
+                        for (let i = 0; i < wordToGuess.length; i++) {
+                            if (wordToGuess[i] === currGuess) {
+                                guessedLetters.push(i);
+                                pushed++;
+                            }
+                        }
+
+                        if (pushed === 0) {
+                            incorrectGuesses++;
+                            if (incorrectGuesses === 5) {
+                                $("#youLose").modal("show");
+                            }
+                        }
+                    } else {
+                        if (currGuess === wordToGuess) {
+                            $("#playerWon").modal("show");
+                        } else {
                             $("#youLose").modal("show");
                         }
                     }
+                    replaceBlanks();
+                } else {
+                    $("#youLose").modal("show");
                 }
-                replaceBlanks();
             } else {
-                $("#youLose").modal("show");
+                $("#alreadyGuessed").modal("show");
             }
-        } else {
-            $("#alreadyGuessed").modal("show");
-        }
 
         document.getElementById('playersGuess').value = "";
     }
 
-    function closeModal(modalName){
+    function closeModal(modalName) {
         console.log("Closing " + modalName);
         $("#" + modalName).modal("hide");
     }
@@ -330,12 +343,14 @@
 
     function updateIncorrectAnswers() {
         let newVal = (incorrectGuesses * (100 / 5))
+
         document.getElementById("errorProgressBar").value = newVal;
+        document.getElementById("incorrectAnswersDisplay").innerText = newVal / 20;
     }
 
-    function selectWord(){
+    function selectWord() {
         let wordLength = document.getElementById("wordLength").value
-        wordToGuess = words.categories[category][wordLength-5];
+        wordToGuess = words.categories[category][wordLength - 3];
         replaceBlanks();
     }
 </script>
