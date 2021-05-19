@@ -98,12 +98,12 @@
     </div>
 </div>
 
-<div aria-hidden="false" aria-labelledby="youLoseLabel" class="modal" id="alreadyGuessed" role="dialog"
+<div aria-hidden="false" aria-labelledby="alreadyGuessedLabel" class="modal" id="alreadyGuessed" role="dialog"
      tabindex="-1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="alreadyGuessedLabel">YOU LOSE</h5>
+                <h5 class="modal-title" id="alreadyGuessedLabel">Choose a different character</h5>
                 <button aria-label="Close" class="close" data-dismiss="modal" onclick="closeModal('alreadyGuessed')"
                         type="button">
                     <span aria-hidden="true">&times;</span>
@@ -113,10 +113,10 @@
                 You have already guessed that letter. Please guess a different letter and try again.
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" onclick="closeModal('alreadyGuessed')"
+                <button class="btn btn-secondary" data-dismiss="modal" onclick="startGame()"
                         type="button">Resign
                 </button>
-                <button class="btn btn-primary" data-dismiss="modal" onclick="startGame()"
+                <button class="btn btn-primary" data-dismiss="modal" onclick="closeModal('alreadyGuessed')"
                         type="button">Ok! I will try again
                 </button>
             </div>
@@ -222,6 +222,7 @@
     <div class="alert alert-primary" id="guessedLetters">
         Guessed Letters
         <hr>
+        <img src="images/hangman/0.png" id="hangmanDisplay" width="25%"></img>
         <p id="guessedLettersDisplay"></p>
         <hr>
         Incorrect Guesses (<span id="incorrectAnswersDisplay">0</span>/5)<br>
@@ -379,6 +380,7 @@
 
         document.getElementById("errorProgressBar").value = newVal;
         document.getElementById("incorrectAnswersDisplay").innerText = newVal / 20;
+        document.getElementById("hangmanDisplay").src = "images//hangman//"+(newVal / 20)+".png"
     }
 
     function selectWord() {
