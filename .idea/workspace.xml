@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a23a5b14-3985-48c0-8d9a-db4a3672b7fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/words.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/hangman.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/hangman.html" afterDir="false" />
     </list>
@@ -31,15 +30,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/bin/www" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/public/numbers.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Procfile" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/public/mypage.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/numbers.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/public/table-Inclass.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/mypage.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/public/index.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/public/simple-page.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/public/resume.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bin/www" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1qlU2x6CFGPtPdATu5EqAC4C70I" />
   <component name="ProjectViewState">
@@ -94,6 +93,8 @@
       <workItem from="1621291754170" duration="21441000" />
       <workItem from="1621316560490" duration="8456000" />
       <workItem from="1621362367621" duration="2687000" />
+      <workItem from="1621371065491" duration="1617000" />
+      <workItem from="1621373348382" duration="3714000" />
     </task>
     <servers />
   </component>

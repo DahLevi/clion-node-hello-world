@@ -11,7 +11,7 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="javascripts/hangman.js"></script>
 </head>
-<body style="margin: 50px">
+<body style="margin: 50px; align-items: center; align-content: center; justify-content: center; text-align: center">
 <div aria-hidden="false" aria-labelledby="youLoseLabel" class="modal" id="youLose" role="dialog"
      tabindex="-1">
     <div class="modal-dialog" role="document">
@@ -27,11 +27,12 @@
                 Thanks for playing, but you have lost. Want to play again?
             </div>
             <div class="modal-footer">
-                <button onclick="startGame()" class="btn btn-secondary" data-dismiss="modal" type="button">Let's Play
-                    Again</button>
-                <button onclick="closeModal('youLose')" class="btn btn-primary" data-dismiss="modal"
+                <button onclick="closeModal('youLose')" class="btn btn-secondary" data-dismiss="modal"
                         type="button">Nope!
                 </button>
+                <button onclick="startGame()" class="btn btn-primary" data-dismiss="modal" type="button">Let's Play
+                    Again</button>
+
             </div>
         </div>
     </div>
@@ -52,7 +53,8 @@
                 Please choose a category before guessing a letter! We need to generate a word for you to guess!
             </div>
             <div class="modal-footer">
-                <button onclick="startGame()" class="btn btn-secondary" data-dismiss="modal" type="button">Ok!
+                <button onclick="closeModal('chooseCategory')" class="btn btn-secondary" data-dismiss="modal"
+                        type="button">Ok!
                     I am Sorry</button>
             </div>
         </div>
@@ -109,8 +111,26 @@
     </div>
 </div>
 
-<div class="slidecontainer">
-    <label class="form-label" for="wordLength">Maximum number of letters in word</label> <br>
+<div class="alert alert-secondary">
+    <h1 style="text-align: center">Hangman</h1>
+    <hr>
+    <p>Welcome to Hangman!</p>
+    <p>The goal of the game is to guess the word I am thinking of. For each incorrect answer, the man is one limb
+        closer to
+        hanging. I know what you are thinking - Yes, we are pretty metal.</p>
+    <p>To begin, set the number of characters in the word you wish to guess. Then select a category. Then enter your
+    guess into the guess box!</p>
+    <p>Words and letters are accepted. However, the entire word is considered, if your word guess is wrong, it only
+        counts as 1 limb. You have 5 "misguesses" before you lose. You will lose on your 5th wrong guess.</p>
+    <p>And just to make all this scarring "killing a man over a word game" stuff easier, I have made it so you can
+        hit either the "Guess!" button or your enter key to submit your guess. I know, I am a generous guy. You're
+        welcome.</p>
+    <h3 style="text-align: center">Now let the guessing begin!</h3>
+</div>
+
+<div style="width: 100%">Maximum number of letters in word</div>
+<div class="slidecontainer" style="display: flex; justify-content: center;">
+
     <div style="width: 50%;">
         <input class="form-range" id="wordLength" max="10" min="5" onclick="slider()" step="1" style="padding-left:
          50%"
@@ -128,31 +148,42 @@
     <div id="rangeDisplay" style="width: 30%; float: left;"></div>
 </div>
 
-
+<br>
+<h5>Categories:</h5>
 <button class="btn btn-primary" id="catFood" onclick="selectOption('food')" type="button">Food</button>
 <button class="btn btn-primary" id="catAnimals" onclick="selectOption('animals')" type="button">Animals</button>
 
-<div class="input-group mb-3">
-    <input aria-describedby="basic-addon2" aria-label="Guess" class="form-control" id="playersGuess"
-           placeholder="Guess" type="text">
-    <div class="input-group-append">
-        <button class="btn btn-outline-secondary"
-                onclick="guessALetter(document.getElementById('playersGuess').value.toLowerCase())"
-                type="button">Guess!
-        </button>
-    </div>
+<div style="padding-bottom: 50px"></div>
+
+
+<div class="form-floating mb-3">
+
+    <input class="form-control" id="playersGuess" type="text" placeholder="p"/>
+    <label class="form-label" for="playersGuess">Guess a letter/word</label>
 </div>
 
-<progress id="errorProgressBar" max="100" value="0">Error</progress>
+<div class="input-group-append">
+    <button class="btn btn-outline-secondary"
+            onclick="guessALetter(document.getElementById('playersGuess').value.toLowerCase())"
+            type="button">Guess!
+    </button>
+</div>
+
+<br>
 
 <div class="alert alert-primary" id="" role="alert">
-    Word: <p id="currentWordShown"></p>
+    Word: <p id="currentWordShown">Please select a category!</p>
 </div>
+<div>
 
+</div>
 <div class="alert alert-primary" id="guessedLetters">
     Guessed Letters
     <hr>
     <p id="guessedLettersDisplay"></p>
+    <hr>
+    Incorrect Guesses <br>
+    <progress id="errorProgressBar" max="100" value="0">Error</progress>
 </div>
 
 
@@ -193,12 +224,22 @@
         $("#youLose").modal("hide");
         $("#alreadyGuessed").modal("hide");
         $("#chooseCategory").modal("hide");
+        replaceBlanks();
+        document.getElementById("currentWordShown").innerHTML = "Please select a category!"
+        document.getElementById("guessedLettersDisplay").innerHTML = "Please select a category!"
+        category = "";
+        count = 5;
+        wordToGuess = "";
+        guessedLetters = [];
+        incorrectGuesses = 0;
     }
 
     function selectOption(option) {
         category = option;
         document.getElementById("catFood").disabled = true;
         document.getElementById("catAnimals").disabled = true;
+        document.getElementById("currentWordShown").innerHTML = ""
+        document.getElementById("guessedLettersDisplay").innerHTML = ""
         selectWord();
     }
 
@@ -239,6 +280,7 @@
                         $("#playerWon").modal("show");
                     } else {
                         incorrectGuesses++;
+                        guessedLetters.push(currGuess);
                         if (incorrectGuesses === 5) {
                             $("#youLose").modal("show");
                         }
