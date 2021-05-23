@@ -1,5 +1,5 @@
 const http = require('http');
-const hostname = app.listen().address;
+const hostname = server.address();
 const port = process.env.PORT || '5000';
 
 var friends = require("../friends.json"); // Once for all times
