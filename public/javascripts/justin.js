@@ -1,5 +1,5 @@
 const http = require('http');
-const hostname = "agile-bastion-62666.herokuapp.com";
+const hostname = app.listen().address;
 const port = process.env.PORT || '5000';
 
 var friends = require("../friends.json"); // Once for all times
