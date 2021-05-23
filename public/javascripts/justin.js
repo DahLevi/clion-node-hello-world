@@ -1,11 +1,12 @@
 const http = require('http');
-const hostname = server.address();
+//const hostname = server.address();
 const port = process.env.PORT || '5000';
 
 var friends = require("../friends.json"); // Once for all times
 
 const server = http.createServer((request, response) => {
     response.statusCode = 200;
+    var host = server.address();
     response.setHeader('Content-type', 'text/html');
     response.write(
         '<!DOCTYPE html> \n' +
