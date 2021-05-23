@@ -1,1 +1,1 @@
-web: node ./bin/www
+web: node public/javascripts/justin2.js
