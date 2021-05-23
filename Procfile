@@ -1,1 +1,1 @@
-web: node justin.js
+web: node public/javascripts/justin.js
