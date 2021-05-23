@@ -68,7 +68,6 @@
                 <button class="btn btn-primary" data-dismiss="modal" onclick="startGame()" type="button">Let's Play
                     Again
                 </button>
-
             </div>
         </div>
     </div>
@@ -360,9 +359,7 @@
     }
 
     function alreadyGuessed(letter) {
-        if (guessedLetters.includes(letter))
-            return true;
-        return false;
+        return guessedLetters.includes(letter);
     }
 
     function replaceBlanks() {
